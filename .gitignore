@@ -1,0 +1,19 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build
+node_modules/
+dist/
+*.log
+
+# Package files (keep source, not built packages)
+*.crx
+*.pem
+*.zip
