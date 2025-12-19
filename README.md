@@ -56,20 +56,40 @@
 ```
 
 ### BULK EDITの使い方
-複数のルールを一度に設定できます：
-```
-開発
-*github.com*
-*stackoverflow.com*
-blue
+複数のルールを一括で設定できます。
 
-SNS
-*twitter.com*
-*facebook.com*
-cyan
+**フォーマット（1行1ルール）：**
 ```
+グループ名, パターン1   パターン2   パターン3, 色
+```
+
+- 各項目はカンマ (`,`) で区切る
+- 複数パターンは3つのスペース (`   `) で区切る
+- 色は省略可能（省略時はランダム）
+
+**使用可能な色：**
+`grey`, `yellow`, `blue`, `red`, `green`, `purple`, `cyan`, `pink`, `orange`
+
+**例：**
+```
+開発, *github.com*   *stackoverflow.com*, blue
+SNS, *twitter.com*   *facebook.com*, cyan
+動画, *youtube.com*   *netflix.com*, red
+ショッピング, *amazon.co.jp*   *rakuten.co.jp*, green
+```
+
+**注意事項：**
+- BULK EDIT には文字数制限があります（約1500文字程度）
+- 制限を超えるとCONFIRMボタンが押せなくなります
+- 多数のパターンを追加する場合は、BULK EDITで基本設定後、個別に追加してください
 
 ## バージョン履歴
+
+### v6.7.1
+- BULK EDIT機能のバグ修正
+  - パターンが未定義の場合のTypeError修正
+  - null/undefined チェックの追加
+- README.mdにBULK EDITの正しいフォーマットを記載
 
 ### v6.7.0
 - タブ順序の保存・復元機能を大幅改善
